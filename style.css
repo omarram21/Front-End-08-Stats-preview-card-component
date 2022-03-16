@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: hsl(233, 47%, 7%);
+}
+.card {
+  overflow: hidden;
+  height: 50vh;
+  width: 75vw;
+  margin: 15rem auto;
+  background-color: hsl(244, 38%, 16%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "info imgo";
+  color: hsl(0, 0%, 100%);
+  border-radius: 25px;
+}
+.info {
+  grid-area: info;
+  padding: 3rem;
+}
+
+.info h1 {
+  font-size: 40px;
+  font-family: "Inter", sans-serif;
+}
+.info p {
+  margin: 5rem 0;
+  font-size: 16px;
+  line-height: 1.5rem;
+  opacity: 0.5;
+  font-family: "Inter", sans-serif;
+}
+.info .stats {
+  display: flex;
+  /* text-align: left; */
+  justify-content: space-between;
+}
+.info .stats .sigleState h2 {
+  font-size: 30px;
+  font-family: "Inter", sans-serif;
+}
+.info .stats .sigleState h3 {
+  font-size: 15px;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+.imgo {
+  grid-area: imgo;
+  background-image: url(image-header-desktop.jpg);
+  background-size: cover;
+  position: relative;
+}
+.imgo::after {
+  content: "";
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(277, 89%, 44%);
+  opacity: 0.4;
+  overflow: hidden;
+}
+@media (max-width: 1053px) {
+  .card {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr 3fr;
+    grid-template-areas:
+      "imgo"
+      "info";
+    height: auto;
+    text-align: center;
+    width: 90%;
+  }
+
+  .info .stats {
+    display: block;
+  }
+  .info .stats .sigleState {
+    margin-top: 50px;
+  }
+  .imgo {
+    background-image: url(./images/image-header-mobile.jpg);
+    background-size: cover;
+  }
+}
